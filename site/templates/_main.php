@@ -48,13 +48,13 @@ if (($next_page->id) || ($prev_page->id)) {
 }
 
 $cookie_consent = '';
-if (true || !$session->hasCookie()) {
+if ($user->isGuest() || !$session->hasCookie()) {
 	$cookie_consent .= "
 <div class='w3-panel w3-theme w3-display-container'>
   <span onclick='this.parentElement.style.display=\"none\"'
   class='w3-button w3-theme w3-large w3-display-topright'>x</span>
-  <h4>Data Privacy Regulation.</h4>
-  <p>This website will store information on your computer which allows us to recognise you as an individual user. This information is stored in cookies and can be deleted by you at anytime from your browser.</p>
+  <h4>".__("Data Privacy Regulation.")."</h4>
+  <p>".__("This website will store information on your computer which allows us to recognise you as an individual user. This information is stored in cookies and can be deleted by you at anytime from your browser.")."</p>
 </div>
 	";
 };
@@ -96,7 +96,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 {$header_top}
 <header class='w3-container w3-center w3-padding'> 
   {$language_menu}
-  {$page->body}
+  {$page_body}
 </header>
 
 {$content}
