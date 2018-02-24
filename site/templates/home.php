@@ -63,7 +63,7 @@ foreach($taglist as $tag => $key) {
 $orsqlstat = implode(' OR ', $statements);
 
 // SELECT * FROM mk_mekong.field_tags JOIN mk_mekong.pages ON mk_mekong.field_tags.pages_id=mk_mekong.pages.id WHERE (mk_mekong.field_tags.data=1027 OR mk_mekong.field_tags.data=1028) AND mk_mekong.pages.templates_id=44;
-$sql = "SELECT * FROM {$tags_field_table} JOIN mk_mekong.pages ON {$tags_field_table}.pages_id=mk_mekong.pages.id WHERE ({$orsqlstat}) AND mk_mekong.pages.templates_id={$blog_template->id}";
+$sql = "SELECT * FROM {$tags_field_table} JOIN pages ON {$tags_field_table}.pages_id=pages.id WHERE ({$orsqlstat}) AND pages.templates_id={$blog_template->id}";
 wire('log')->save('messages', 'SQL:'.$sql);
 
 $pDOS = $database->prepare($sql);
