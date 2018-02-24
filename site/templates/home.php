@@ -53,6 +53,7 @@ $tagsearch = '1029';
 
 $tags_field = $fields->get('tags');
 $tags_field_table = $tags_field->getTable();
+$blog_template = $templates->get('blog');
 
 $statements = array();
 foreach($taglist as $tag => $key) {
@@ -62,7 +63,7 @@ foreach($taglist as $tag => $key) {
 $orsqlstat = implode(' OR ', $statements);
 
 // SELECT * FROM mk_mekong.field_tags JOIN mk_mekong.pages ON mk_mekong.field_tags.pages_id=mk_mekong.pages.id WHERE (mk_mekong.field_tags.data=1027 OR mk_mekong.field_tags.data=1028) AND mk_mekong.pages.templates_id=44;
-$sql = "SELECT * FROM {$tags_field_table} JOIN mk_mekong.pages ON {$tags_field_table}.pages_id=mk_mekong.pages.id WHERE ({$orsqlstat}) AND mk_mekong.pages.templates_id=44";
+$sql = "SELECT * FROM {$tags_field_table} JOIN mk_mekong.pages ON {$tags_field_table}.pages_id=mk_mekong.pages.id WHERE ({$orsqlstat}) AND mk_mekong.pages.templates_id={$blog_template->id}";
 $pDOS = $database->prepare($sql);
 if ($pDOS->execute()) {
   while ($row = $pDOS->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_NEXT)) {
