@@ -2,10 +2,12 @@
 
 	$blog = $page;
 
-  $content = '';
-  $page_body = '';
+	$content = '';
+ 	$page_body = '';
 
     $image_html = '';
+    $external_html = '';
+    
     $blog_image = $blog->images->first();
     if ($blog_image) {
       $image_html .= "<img src='{$blog_image->url}' alt='{$blog_image->description}' style='width:100%'>";

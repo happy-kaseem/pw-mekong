@@ -72,6 +72,8 @@ if ($pDOS->execute()) {
     $blog = $pages->get($row['pages_id']);
 
   	$image_html = '';
+    $external_html = '';
+    
   	$blog_image = $blog->images->first();
   	if ($blog_image) {
   		$thumb = $blog_image->size(600, 150, 'center');
