@@ -24,7 +24,7 @@
 	      $tags_text .= "<span class='w3-tag'>{$tag->title}</span>";
 	    }
 
-	    $blog_link = '';
+	    $blog_link = '<p>&nbsp;</p>';
 	    if ($preview)
 	    $blog_link = "
 	            <p><a href='$blog->url' class='w3-button w3-padding-large w3-theme-l5 w3-border'><b>READ MORE »</b></a></p>
