@@ -45,6 +45,8 @@ foreach($user->roles as $userrole) {
 $tagsearch = 'id='.implode('|', array_keys($taglist));
 //$content .= "<p>Page:{$tagsearch}, {$count}</p>";
 $tagsearch = $pages->find($tagsearch, 'include=all');
+
+$log->save('messages',"Tags: {$tagsearch}");
 //$tagsearch = '1027';
 //$p = $pages->get($tagsearch);
 $count = count($tagsearch);
