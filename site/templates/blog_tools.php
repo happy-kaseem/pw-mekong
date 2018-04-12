@@ -11,8 +11,6 @@
 			<div class='w3-col l9'>
 		";
 
-		$blog_html .= $user->name;
-
 		// build a list of all the tags found in all the roles of the user
 		$taglist = array();
 		foreach($user->roles as $userrole) {
@@ -86,7 +84,6 @@
 		$datetime = wire('datetime');
 
 		$blog_html = '';
-	 	$page_body = '';
 
 	    $image_html = '';
 	    $external_html = '';
