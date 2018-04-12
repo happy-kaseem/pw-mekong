@@ -63,24 +63,10 @@ $blog_template = $templates->get('blog');
 $tag_sel = implode('|', array_keys($taglist));
 $selector = "template=blog, tags={$tag_sel}";
 
-/*$statements = array();
-foreach($taglist as $tag => $key) {
-  $statements[] = $tags_field_table.'.data='.$tag;
-}
+wire('log')->save('messages', 'selector:'.$selector);
 
-$orsqlstat = implode(' OR ', $statements);
-
-// SELECT * FROM mk_mekong.field_tags JOIN mk_mekong.pages ON mk_mekong.field_tags.pages_id=mk_mekong.pages.id WHERE (mk_mekong.field_tags.data=1027 OR mk_mekong.field_tags.data=1028) AND mk_mekong.pages.templates_id=44;
-$sql = "SELECT * FROM {$tags_field_table} JOIN pages ON {$tags_field_table}.pages_id=pages.id WHERE ({$orsqlstat}) AND pages.templates_id={$blog_template->id}";
-wire('log')->save('messages', 'SQL:'.$sql);
-
-$pDOS = $database->prepare($sql);
-if ($pDOS->execute()) {*/
-  $blog_entries = $pages->find($selector);
-  foreach ($blog_entries as $blog) {
-//  while ($row = $pDOS->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_NEXT)) {
-    $blog = $pages->get($row['pages_id']);
-
+$blog_entries = $pages->find($selector);
+foreach ($blog_entries as $blog) {
   	$image_html = '';
     $external_html = '';
     
@@ -123,8 +109,7 @@ if ($pDOS->execute()) {*/
     </div>
     <hr>
     ";
-  }
-//}
+}
 
 $content .= "
 <!-- END Blog entries -->
