@@ -31,6 +31,10 @@ $content = "
     </div>
   </div><hr>
 </div>
+";
+
+$blog_html = RenderBlog();
+$content .= $blog_html; 
 
 $content .= "
 <!-- END Grid -->
