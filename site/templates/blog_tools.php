@@ -81,7 +81,9 @@
 
 	}
 
-	function renderBlogEntry($blog) {
+	function renderBlogEntry($blog, $homepage) {
+
+		$datetime = wire('datetime');
 
 		$blog_html = '';
 	 	$page_body = '';

@@ -2,6 +2,6 @@
 
 	include_once('./blog_tools.php');
 
-	$content = renderBlogEntry($page);
+	$content = renderBlogEntry($page, $homepage);
 	
 
