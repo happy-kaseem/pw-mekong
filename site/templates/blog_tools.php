@@ -45,7 +45,6 @@
 	        <div class='w3-row'>
 	          <div class='w3-col m8 s12'>
 	          	{$blog_link}
-	            <p><a href='$homepage->url' class='w3-button w3-padding-large w3-white w3-border'><b>RETURN »</b></a></p>
 	          </div>
 	          <div class='w3-col m4 w3-hide-small'>
 	            <p><span class='w3-padding-large w3-right'><b>Comments  </b> <span class='w3-tag'>0</span></span></p>
@@ -58,7 +57,9 @@
 
 		if (!$preview) {
 			$blog_html .= "
+		      <div class='w3-container'>
 	            <p><a href='$homepage->url' class='w3-button w3-padding-large w3-white w3-border'><b>RETURN »</b></a></p>
+	          </div>
 	         ";
 		}
 
