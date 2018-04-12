@@ -19,7 +19,7 @@
 		  }
 		}
 
-		$tag_sel = implode('|', array_keys($taglist));
+		$tag_sel = implode('|', \array_keys($taglist));
 		$selector = "template=blog, tags={$tag_sel}";
 
 		wire('log')->save('messages', 'selector:'.$selector);
