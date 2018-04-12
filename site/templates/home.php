@@ -33,7 +33,7 @@ $content = "
 </div>
 ";
 
-$blog_html = RenderBlog($user);
+$blog_html = renderBlog();
 $content .= $blog_html; 
 
 $content .= "
