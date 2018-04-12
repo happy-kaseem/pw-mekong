@@ -35,6 +35,7 @@ $content = "
 <div class='w3-col l9'>
 ";
 
+// build a list of all the tags found in all the roles of the user
 $taglist = array();
 foreach($user->roles as $userrole) {
   foreach($userrole->tags as $tag) {
@@ -58,7 +59,11 @@ $tags_field = $fields->get('tags');
 $tags_field_table = $tags_field->getTable();
 $blog_template = $templates->get('blog');
 
-$statements = array();
+
+$tag_sel = implode('|', array_keys($taglist));
+$selector = "template=blog, tags={$tag_sel}";
+
+/*$statements = array();
 foreach($taglist as $tag => $key) {
   $statements[] = $tags_field_table.'.data='.$tag;
 }
@@ -70,8 +75,10 @@ $sql = "SELECT * FROM {$tags_field_table} JOIN pages ON {$tags_field_table}.page
 wire('log')->save('messages', 'SQL:'.$sql);
 
 $pDOS = $database->prepare($sql);
-if ($pDOS->execute()) {
-  while ($row = $pDOS->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_NEXT)) {
+if ($pDOS->execute()) {*/
+  $blog_entries = $pages->find($selector);
+  foreach ($blog_entries as $blog) {
+//  while ($row = $pDOS->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_NEXT)) {
     $blog = $pages->get($row['pages_id']);
 
   	$image_html = '';
@@ -117,7 +124,7 @@ if ($pDOS->execute()) {
     <hr>
     ";
   }
-}
+//}
 
 $content .= "
 <!-- END Blog entries -->
