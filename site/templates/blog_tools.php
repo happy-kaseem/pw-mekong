@@ -1,8 +1,8 @@
 <?php
 
-	function RenderBlog() {
+	function RenderBlog($user) {
 
-		$user = wire('user');
+//		$user = wire('user');
 		$pages = wire('pages');
 		$datetime = wire('datetime');
 
@@ -71,8 +71,9 @@
 		}
 
 		$blog_html .= "
-		<!-- END Blog entries -->
-		</div>";
+			<!-- END Blog entries -->
+			</div>
+		";
 
 		return $blog_html;
 
