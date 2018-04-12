@@ -30,6 +30,7 @@
 	            <p><a href='$blog->url' class='w3-button w3-padding-large w3-theme-l5 w3-border'><b>READ MORE »</b></a></p>
            ";
 
+	    $blog_bodystyle = $preview ? 'max-height:120pt;overflow:scroll' : '';
 
 	    $blog_html .= " 
 	    <div class='w3-card-4 w3-margin w3-theme-l5'>
@@ -41,7 +42,7 @@
 	      </div>
 
 	      <div class='w3-container'>
-	        <div style='max-height:120pt;overflow:scroll'>{$blog->body}</div>
+	        <div style='{$blog_bodystyle}'>{$blog->body}</div>
 	        <div class='w3-row'>
 	          <div class='w3-col m8 s12'>
 	          	{$blog_link}
