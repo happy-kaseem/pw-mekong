@@ -43,23 +43,6 @@ foreach($user->roles as $userrole) {
   }
 }
 
-$tagsearch = 'id='.implode('|', array_keys($taglist));
-$log->save('messages',"Tags: {$tagsearch}");
-//$content .= "<p>Page:{$tagsearch}, {$count}</p>";
-$tagsearch = $pages->find($tagsearch, 'include=all');
-
-$log->save('messages',"IDs: {$tagsearch}");
-//$tagsearch = '1027';
-//$p = $pages->get($tagsearch);
-$count = count($tagsearch);
-//$content .= "<p>Page:{$tagsearch}, {$count}</p>";
-$tagsearch = '1029';
-
-$tags_field = $fields->get('tags');
-$tags_field_table = $tags_field->getTable();
-$blog_template = $templates->get('blog');
-
-
 $tag_sel = implode('|', array_keys($taglist));
 $selector = "template=blog, tags={$tag_sel}";
 
