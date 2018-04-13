@@ -10,7 +10,7 @@
  		$bookpagetype_book = $pages->get('/processwire/book-page-types/book/');
  		$bookpagetype_chapter = $pages->get('/processwire/book-page-types/chapter/');
  		if ($page->bookpagetypes == $bookpagetype_library) {
-			$page_heading = '<h1>Library</h1>';
+			$page_heading = "<h1>Library</h1>";
 			$books = $page->children("template=book, bookpagetypes={$bookpagetype_book->id}");
 			foreach ($books as $book) {
 				$page_heading .= "<h2><a href='{$book->url}'><i class='fa fa-book'></i>&nbsp;{$book->title}</a></h2>";
@@ -22,7 +22,7 @@
 				$page_heading .= "<h2><a href='{$chapter->url}'><i class='fa fa-file-text'></i>&nbsp;{$chapter->title}</a></h2>";
 			}
  		} else if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/chapter/')) {
-			$page_heading = '<h2>{$chapter->title}</h2>';
+			$page_heading = "<h2>{$chapter->title}</h2>";
  		}
 	}
 	$content = "
