@@ -19,7 +19,7 @@
 			$page_heading = "<h1>{$page->title}</h1>";
 			$chapters = $page->children("template=book, bookpagetypes={$bookpagetype_chapter->id}");
 			foreach ($chapters as $chapter) {
-				$page_heading .= "<h2>{$chapter->title}</h2><a href='{$chapter->url}'><i class='fa fa-book'></i></a>";
+				$page_heading .= "<h2><a href='{$chapter->url}'><i class='fa fa-file-text'></i>&nbsp;{$chapter->title}</a></h2>";
 			}
  		} else if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/chapter/')) {
 			$page_heading = '<h2>{$chapter->title}</h2>';
