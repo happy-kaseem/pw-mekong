@@ -6,9 +6,9 @@
  	$page_body = '';
 
  	if($page->bookpagetypes) {
- 		if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/library/') {
+ 		if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/library/')) {
 			$page_heading = '<h1>Library</h1>';
- 		} else if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/chapter/') {
+ 		} else if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/chapter/')) {
 			$page_heading = '<h2>Chapter</h2>';
  		}
 	}
