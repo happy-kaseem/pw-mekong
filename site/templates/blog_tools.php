@@ -21,7 +21,7 @@
 	    if ($blog->description) $blog_description = $blog->description.', ';
 	    $tags_text = '';
 	    foreach($blog->tags as $tag) {
-	      $tags_text .= "<span class='w3-tag'>{$tag->title}</span>";
+	      $tags_text .= "<span class='w3-tag'>{$tag->title}</span>&nbsp;";
 	    }
 
 	    $blog_link = '<p>&nbsp;</p>';
