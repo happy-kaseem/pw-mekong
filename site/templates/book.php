@@ -8,7 +8,7 @@
  	$parents = $page->parents("template=book");
 
  	if (count($parents)>0) {
- 		$page_heading .= "<div class='w3-container'>";
+ 		$page_heading .= "<div class='w3-container w3-bottombar w3-theme-l5'>";
  		foreach ($parents as $parent) {
 	 		$page_heading .= "<b><i class='fa fa-angle-double-right'></i>&nbsp;<a class='w3-button' href='{$parent->url}'>{$parent->title}</a></b>";
  		}
