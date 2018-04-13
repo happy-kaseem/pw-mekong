@@ -22,14 +22,13 @@
 				$page_heading .= "<h2>{$chapter->title}</h2><a href='{$chapter->url}'><i class='fa fa-book'></i></a>";
 			}
  		} else if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/chapter/')) {
-			$page_heading = '<h2>Chapter</h2>';
+			$page_heading = '<h2>{$chapter->title}</h2>';
  		}
 	}
 	$content = "
 	<div class='w3-container'>
 		{$page_heading}
 		{$page->body}
-		}
 	</div>
 	";
 	
