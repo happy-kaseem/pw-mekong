@@ -5,6 +5,18 @@
 	$page_heading = '';
  	$page_body = '';
 
+ 	$parents = $page->parents("template=book");
+
+ 	if (count($parents)>0) {
+ 		$page_heading .= "<div class='w3-container'>";
+ 		$breadcrumbs = array[];
+ 		foreach ($parents as $parent {
+	 		$breadcrumbs[] = "<a class='w3-button' href='{$parent->url}'>{$parent->title}</a>";
+ 		}
+ 		$page_heading .= implode(' » ', $breadcrumbs);
+ 		$page_heading .= "</div>";
+ 	}
+
  	if($page->bookpagetypes) {
  		$bookpagetype_library = $pages->get('/processwire/book-page-types/library/');
  		$bookpagetype_book = $pages->get('/processwire/book-page-types/book/');
@@ -23,6 +35,10 @@
 			}
  		} else if ($page->bookpagetypes == $pages->get('/processwire/book-page-types/chapter/')) {
 			$page_heading = "<h2>{$page->title}</h2>";
+			$chapters = $page->children("template=book, bookpagetypes={$bookpagetype_chapter->id}");
+			foreach ($chapters as $chapter) {
+				$page_heading .= "<h3><a href='{$chapter->url}'><i class='fa fa-file-text'></i>&nbsp;{$chapter->title}</a></h3>";
+			}
  		}
 	} else {
 		$page_heading = "<h2>{$page->title}</h2>";
