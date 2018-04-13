@@ -9,11 +9,9 @@
 
  	if (count($parents)>0) {
  		$page_heading .= "<div class='w3-container'>";
- 		$breadcrumbs = array();
  		foreach ($parents as $parent) {
-	 		$breadcrumbs[] = "<a class='w3-button' href='{$parent->url}'>{$parent->title}</a>";
+	 		$page_heading .= "<b><i class='fa fa-angle-double-right'></i>&nbsp;<a class='w3-button' href='{$parent->url}'>{$parent->title}</a></b>";
  		}
- 		$page_heading .= implode(' » ', $breadcrumbs);
  		$page_heading .= "</div>";
  	}
 
