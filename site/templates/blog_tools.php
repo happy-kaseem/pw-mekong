@@ -94,7 +94,7 @@
 		$taglist = array_keys(tagList($user));
 		$tag_sel = implode('|', $taglist);
 		$selector = "template=blog, tags={$tag_sel}";
-//		foreach ($tagList as $tag) $selector .= ", tags={$tag}";
+		foreach ($tagList as $tag) $selector .= ", tags={$tag}";
 
 		wire('log')->save('messages', 'selector:'.$selector);
 
