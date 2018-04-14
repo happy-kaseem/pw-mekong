@@ -68,6 +68,17 @@
 		return $blog_html;
 	}
 
+	function tagList($user) {
+		// build a list of all the tags found in all the roles of the user
+		$taglist = array();
+		foreach($user->roles as $userrole) {
+		  foreach($userrole->tags as $tag) {
+		    $taglist += array($tag->id => 1);
+		  }
+		}
+		return array_keys($taglist);
+	}
+
 	function renderBlog() {
 
 		$user = wire('user');
@@ -80,14 +91,8 @@
 		";
 
 		// build a list of all the tags found in all the roles of the user
-		$taglist = array();
-		foreach($user->roles as $userrole) {
-		  foreach($userrole->tags as $tag) {
-		    $taglist += array($tag->id => 1);
-		  }
-		}
-
-		$tag_sel = implode('|', \array_keys($taglist));
+		$taglist = tagList($user);
+		$tag_sel = implode('|', $taglist);
 		$selector = "template=blog, tags={$tag_sel}";
 
 		wire('log')->save('messages', 'selector:'.$selector);
@@ -109,3 +114,6 @@
 
 	}
 
+	function renderFilterlist() {
+
+	}
