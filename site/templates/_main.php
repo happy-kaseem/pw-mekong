@@ -72,8 +72,6 @@ $language_menu .= "
 	  </div>
 ";
 
-if ($user->isGuest()) $content = null;
-
 echo "
 <!DOCTYPE html>
 <html>

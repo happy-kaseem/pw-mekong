@@ -14,8 +14,6 @@ if ($image) {
   ";
 }
 
-$content .= '<p>more</p>';
-
 if ($user->isLoggedin()) {
 
   $updated_text = __('Updated');
