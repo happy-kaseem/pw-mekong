@@ -14,7 +14,7 @@ if ($image) {
   ";
 }
 
-$content .= $page->body;
+$content .= '<p>more</p>';
 
 if ($user->isLoggedin()) {
 
