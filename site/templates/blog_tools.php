@@ -116,8 +116,15 @@
 
 	function renderFilterlist() {
 
+
+		$html = '';
 		$user = wire('user');
-		tagList($user);
-		return "";
+		$taglist = tagList($user);
+
+		foreach ($taglist as $tag) {
+			$html .= "<p>{$tag}</p>";
+		}
+
+		return $html;
 
 	}
