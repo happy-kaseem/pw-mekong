@@ -13,7 +13,7 @@
 	 		$page_heading .= "<b><i class='fa fa-angle-double-right'></i>&nbsp;<a class='w3-button' href='{$parent->url}'>{$parent->title}</a></b>";
  		}
  		$page_heading .= "</div>";
- 		$header_top .= $page_heading;
+ 		$page_menu .= $page_heading;
  	}
 
  	if($page->bookpagetypes) {

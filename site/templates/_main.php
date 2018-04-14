@@ -99,6 +99,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 {$header_top}
 <header class='w3-container w3-center w3-padding'> 
   {$language_menu}
+  {$page_menu}
   {$page_body}
 </header>
 
