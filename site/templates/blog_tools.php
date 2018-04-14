@@ -94,7 +94,8 @@
 		$taglist = array_keys(tagList($user));
 		$tag_sel = implode('|', $taglist);
 		$selector = "template=blog, tags={$tag_sel}";
-		foreach ($taglist as $tag) $selector .= ", tags={$tag}";
+		// todo - this needs to be rewritten so that only entries with all the given tags appear in the last
+//		foreach ($taglist as $tag) $selector .= ", tags={$tag}";
 
 		wire('log')->save('messages', 'selector: '.$selector);
 
