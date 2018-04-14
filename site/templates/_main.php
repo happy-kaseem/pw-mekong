@@ -63,7 +63,7 @@ if ($user->isGuest() || !$session->hasCookie()) {
 };
 
 $language_menu = "
-	  <button class='w3-button w3-black'><i class='fa fa-language'></i> {$user->language->title}</button>
+	  <button class='w3-button w3-theme-d5'><i class='fa fa-language'></i> {$user->language->title}</button>
 	  <div class='w3-dropdown-content w3-bar-block w3-border'>";
 	foreach ($languages as $language) if ($language!=$user->language) {
 		$language_menu .= "<a href='{$page->url($language)}' class='w3-bar-item w3-button'>{$language->title}</a>";
