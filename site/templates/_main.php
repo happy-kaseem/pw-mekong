@@ -94,10 +94,14 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class='w3-content' style='max-width:1400px'>
 
 <!-- Header -->
+<!-- header_top -->
 {$header_top}
+<!-- End header_top -->
 <header class='w3-container w3-center w3-padding w3-bottombar'> 
   <div class='w3-left'>
+    <!-- page_menu -->
     {$page_menu}
+    <!-- End page_menu -->
   </div>
   <div class='w3-dropdown-hover w3-theme w3-right'>
     {$language_menu}
