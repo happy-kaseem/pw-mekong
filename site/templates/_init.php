@@ -19,18 +19,20 @@ if($config->ajax) return;
 
 $loggedin = $user->isLoggedin(); // are we logged in?
 
+// We refer to our homepage a few times in our site, so 
+// we preload a copy here in $homepage for convenience. 
+$homepage = $pages->get('/'); 
+
 // Variables for regions we will populate in _main.php
 // Here we also assign default values for each of them.
 $title = $page->get('headline|title'); 
 $content = $page->body;
 $title = "<h5><b><i class='fa fa-$page->ac_page_icon'></i> $page->title</b></h5>";
 $header_top = '';
-$page_menu = '';
+$page_menu = "<b><i class='fa fa-angle-double-right'></i>&nbsp;<a class='w3-button' href='{$homepage->url}'>{$homepage->title}</a></b>";
+
 $footer = '';
 $page_body = '';
 
 $sidebar = $page->sidebar;
 
-// We refer to our homepage a few times in our site, so 
-// we preload a copy here in $homepage for convenience. 
-$homepage = $pages->get('/'); 
