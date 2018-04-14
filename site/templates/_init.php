@@ -27,7 +27,7 @@ $title = "<h5><b><i class='fa fa-$page->ac_page_icon'></i> $page->title</b></h5>
 $header_top = '';
 $page_menu = '';
 $footer = '';
-$page_body = $page->body;
+$page_body = '';
 
 $sidebar = $page->sidebar;
 
