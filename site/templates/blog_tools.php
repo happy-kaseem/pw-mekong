@@ -73,10 +73,10 @@
 		$taglist = array();
 		foreach($user->roles as $userrole) {
 		  foreach($userrole->tags as $tag) {
-		    $taglist += array($tag->id => 1);
+		    $taglist += array($tag->id => $tag->title);
 		  }
 		}
-		return array_keys($taglist);
+		return $taglist;
 	}
 
 	function renderBlog() {
@@ -91,7 +91,7 @@
 		";
 
 		// build a list of all the tags found in all the roles of the user
-		$taglist = tagList($user);
+		$taglist = array_keys(tagList($user));
 		$tag_sel = implode('|', $taglist);
 		$selector = "template=blog, tags={$tag_sel}";
 
@@ -121,7 +121,7 @@
 		$user = wire('user');
 		$taglist = tagList($user);
 
-		foreach ($taglist as $tag) {
+		foreach ($taglist as $key => $tag) {
 			$html .= "<p>{$tag}</p>";
 		}
 
