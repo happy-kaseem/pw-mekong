@@ -16,6 +16,8 @@ if ($image) {
 
 if ($user->isLoggedin()) {
 
+  $tagfilterlist = renderFilterlist();
+
   $updated_text = __('Updated');
 
   $content .= "
@@ -28,6 +30,7 @@ if ($user->isLoggedin()) {
     <!-- img src='/w3images/avatar_g.jpg' style='width:100%' -->
       <div class='w3-container w3-theme-l5'>
         {$page->about}
+        {$tagfilterlist}
       </div>
     </div><hr>
   </div>

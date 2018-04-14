@@ -116,4 +116,8 @@
 
 	function renderFilterlist() {
 
+		$user = wire('user');
+		tagList($user);
+		return "";
+
 	}
