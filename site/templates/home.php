@@ -5,11 +5,11 @@ include_once('./blog_tools.php');
 $image = $page->images->first();
 if ($image) {
   $thumb = $image->size(1200, 300, 'center');
-  $content = "<div class='w3-card w3-margin'><img src='{$thumb->url}' alt='{$thumb->description}' style='width:100%'>";
-  if ($image->description!='') $content .= "
+  $page_body = "<div class='w3-card w3-margin'><img src='{$thumb->url}' alt='{$thumb->description}' style='width:100%'>";
+  if ($image->description!='') $page_body .= "
       <div class='w3-container w3-center'>$thumb->description</div>
     ";
-  $content .= "
+  $page_body .= "
     </div>
   ";
 }
