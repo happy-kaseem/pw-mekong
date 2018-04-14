@@ -96,7 +96,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 {$header_top}
 <header class='w3-container w3-center w3-padding'> 
-  <div class='w3-left'>
+  <div class='w3-left w3-bottombar'>
     {$page_menu}
   </div>
   <div class='w3-dropdown-hover w3-theme w3-right'>
