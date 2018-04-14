@@ -63,7 +63,6 @@ if ($user->isGuest() || !$session->hasCookie()) {
 };
 
 $language_menu = "
-	<div class='w3-dropdown-hover w3-theme w3-right'>
 	  <button class='w3-button w3-black'><i class='fa fa-language'></i> {$user->language->title}</button>
 	  <div class='w3-dropdown-content w3-bar-block w3-border'>";
 	foreach ($languages as $language) if ($language!=$user->language) {
@@ -71,7 +70,6 @@ $language_menu = "
 	}
 $language_menu .= "
 	  </div>
-	</div>
 ";
 
 if ($user->isGuest()) $content = null;
@@ -98,8 +96,12 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 {$header_top}
 <header class='w3-container w3-center w3-padding'> 
-  {$language_menu}
-  {$page_menu}
+  <div class='w3-left'>
+    {$page_menu}
+  </div>
+  <div class='w3-dropdown-hover w3-theme w3-right'>
+    {$language_menu}
+  </div>
   {$page_body}
 </header>
 
