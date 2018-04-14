@@ -109,7 +109,11 @@ and is wrapped around the whole page content, except for the footer in this exam
   {$page_body}
 </header>
 
+<!-- content -->
+<div class='w3-container w3-padding'> 
 {$content}
+</div>
+<!-- End content -->
 
 <!-- Footer -->
 <footer class='w3-container w3-theme-l3 w3-padding-32 w3-margin-top'>
