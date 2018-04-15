@@ -84,6 +84,7 @@
 		$user = wire('user');
 		$pages = wire('pages');
 		$datetime = wire('datetime');
+		$input = wire('input');
 
 		$blog_html = "
 			<!-- Blog entries -->
