@@ -124,7 +124,8 @@
 		$taglist = tagList($user);
 
 		foreach ($taglist as $key => $tag) {
-			$html .= "<p>{$tag}</p>";
+			$filtered_url = $page->url."?tagfilter={$key}";
+			$html .= "<p><a href='{$filtered_url}'>{$tag}</a></p>";
 		}
 
 		return $html;
