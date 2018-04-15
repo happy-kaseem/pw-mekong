@@ -94,11 +94,12 @@
 		$tagfilter = $input->get('tagfilter');
 
 		// build a list of all the tags found in all the roles of the user
-		$taglist = array_keys(tagList($user));
-		if (isset($taglist[$tagfilter]))
+		$taglistarray = tagList($user);
+		$taglistkeys = array_keys($taglistarray);
+		if (isset($taglistarray[$tagfilter]))
 			$tag_sel = $tagfilter;
 		else
-			$tag_sel = implode('|', $taglist);
+			$tag_sel = implode('|', $taglistkeys);
 		$selector = "template=blog, tags={$tag_sel}";
 		// todo - this needs to be rewritten so that only entries with all the given tags appear in the last
 //		foreach ($taglist as $tag) $selector .= ", tags={$tag}";
