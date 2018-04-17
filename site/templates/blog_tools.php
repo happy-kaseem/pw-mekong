@@ -11,7 +11,12 @@
 	    
 	    $blog_image = $blog->images->first();
 	    if ($blog_image) {
-	  		$thumb = $blog_image->size(600, 150, 'center');
+	    	// for a preview return an image of maximum 150 px height and centered using focus and crop information 
+	    	// for a standard blog entry show the full picture in maximum 600 px width.
+	    	if ($preview)
+		  		$thumb = $blog_image->size(600, 150, 'center');
+		  	else
+		  		$thumb = $blog_image->width(600);
 	  		$image_html .= "<img src='{$thumb->url}' alt='{$thumb->description}' style='width:100%'>";
 	    }
 	    if ($blog->external_url != '') {
