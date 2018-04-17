@@ -39,10 +39,12 @@
 
 	    $blog_html .= " 
 	    <div class='w3-card-4 w3-margin w3-theme-l5'>
+	      <div class='w3-container'>
+	        <h3><b>{$blog->title}</b></h3>
+	      </div>
 	      {$image_html}
 	      {$external_html}
 	      <div class='w3-container'>
-	        <h3><b>{$blog->title}</b></h3>
 	        <h5>{$blog_description}<span class='w3-opacity'>{$datetime->date('F d, Y', $blog->published)} ({$updated_text} {$datetime->relativeTimeStr($blog->modified)})</span></h5>
 	      </div>
 
