@@ -35,6 +35,16 @@
 	            <p><a href='$blog->url' class='w3-button w3-padding-large w3-theme-l5 w3-border'><b>READ MORE »</b></a></p>
            ";
 
+        $blog_images = null;
+        if (count($blog->images)>1) {
+        	$blog_images .= '<div>';
+        	foreach ($blog->images as $image) {
+		  		$thumb = $blog_image->height(60);
+        		$blog_images .= "<img src='{$thumb->url}' class='w3-image'>"
+        	}
+        	$blog_images .= '</div>';
+        }
+
 	    $blog_bodystyle = $preview ? 'max-height:120pt;overflow:scroll' : '';
 
 	    $blog_html .= " 
@@ -50,6 +60,7 @@
 
 	      <div class='w3-container'>
 	        <div style='{$blog_bodystyle}'>{$blog->body}</div>
+	        {$blog_images}
 	        <div class='w3-row'>
 	          <div class='w3-col m8 s12'>
 	          	{$blog_link}
