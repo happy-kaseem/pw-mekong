@@ -139,7 +139,7 @@
 
 		foreach ($taglist as $key => $tag) {
 			$filtered_url = $page->url."?tagfilter={$key}";
-			$html .= "<p><a href='{$filtered_url}'>{$tag}</a></p>";
+			$html .= "<span class='w3-tag'><a href='{$filtered_url}'>{$tag}</a></span><br />";
 		}
 
 		return $html;
