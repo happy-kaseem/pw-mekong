@@ -39,8 +39,8 @@
         if (count($blog->images)>1) {
         	$blog_images .= '<div>';
         	foreach ($blog->images as $image) {
-		  		$thumb = $blog_image->height(60);
-        		$blog_images .= "<img src='{$thumb->url}' class='w3-image'>";
+		  		$thumb = $image->height(60);
+        		$blog_images .= "<img src='{$thumb->url}' class='w3-image w3-padding'>";
         	}
         	$blog_images .= '</div>';
         }
