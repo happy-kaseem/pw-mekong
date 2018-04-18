@@ -40,7 +40,7 @@
         	$blog_images .= '<div>';
         	foreach ($blog->images as $image) {
 		  		$thumb = $blog_image->height(60);
-        		$blog_images .= "<img src='{$thumb->url}' class='w3-image'>"
+        		$blog_images .= "<img src='{$thumb->url}' class='w3-image'>";
         	}
         	$blog_images .= '</div>';
         }
