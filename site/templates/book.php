@@ -1,4 +1,4 @@
-<?php
+<?php namespace ProcessWire;
 
 	include_once('./book_tools.php');
 

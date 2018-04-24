@@ -1,4 +1,4 @@
-<?php
+<?php namespace ProcessWire;
 
 	function renderBlogEntry($blog, $homepage, $preview=false) {
 
