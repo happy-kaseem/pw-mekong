@@ -1,6 +1,6 @@
 <?php namespace ProcessWire;
 
-	include_once('./book_tools.php');
+	include_once('./_book_tools.php');
 
 	$page_heading = '';
  	$page_body = '';
