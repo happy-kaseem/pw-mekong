@@ -1,6 +1,6 @@
 <?php namespace ProcessWire;
 
-include_once('./blog_tools.php');
+include_once('./_blog_tools.php');
 
 $image = $page->images->first();
 if ($image) {
