@@ -12,14 +12,11 @@ if ($user->isLoggedin()) {
 
 	$comment = 'no comment';
 	$urlsegment = $input->urlSegment(1);
-	$selector = "name={$urlsegment}, include=all";
-	$log->save('messages', $selector);
+	$selector = "name={$urlsegment}, include=all"; // selector to find the token
 	$token = $pages->get('/processwire/landing-tokens/')->find($selector);
-	if (count($token)==1) {
-		$token = $token[0];
-		$expiration_ts = $token->getUnformatted('token_expiration');
-		$log->save('messages', $expiration_ts .' | '.\time());
-		if ($expiration_ts>=\time()) { // is the token already expired?
+	if (count($token)==1) { // did we find excatly one token
+		$token = $token[0]; // retrieve the one token from the array
+		if ($token->getUnformatted('token_expiration')>=\time()) { // is the token already expired?
 			$comment = 'valid token!';
 		} else {
 			$comment = 'expired token!';
