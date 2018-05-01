@@ -18,7 +18,7 @@ if ($user->isLoggedin()) {
 	if (count($token)==1) {
 		$token = $token[0];
 		$expiration_ts = $token->getUnformatted('token_expiration');
-		$log->save('messages', $exp);
+		$log->save('messages', $exp .' | '.\time());
 		if ($expiration_ts>=\time()) { // is the token already expired?
 			$comment = 'valid token!';
 		} else {
