@@ -16,7 +16,7 @@ if ($user->isLoggedin()) {
 	$log->save('messages', $selector);
 	$token = $pages->get('/processwire/landing-tokens/')->find($selector);
 	if (count($token)==1) {
-		if ($token->token_expiration>=now()) {
+		if ($token->token_expiration>=\time()) {
 			$comment = 'valid token!';
 		} else {
 			$comment = 'expired token!';
