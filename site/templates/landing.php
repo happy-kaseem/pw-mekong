@@ -12,6 +12,7 @@ if ($user->isLoggedin()) {
 
 	$comment = 'no comment';
 	$urlsegment = $input->urlSegment(1);
+	$selector = "name={$urlsegment}";
 	$token = $pages->get('/processwire/landing-tokens/')->find($urlsegment);
 	if ((count($token)==1) and ($token->token_expiration>=now())) {
 		$comment = 'valid token!';
@@ -21,6 +22,7 @@ if ($user->isLoggedin()) {
 	<div class='w3-container'>
 		<p>Welcome back</p>
 		<p>{$urlsegment}</p>
+		<p>Selector: {$selector}</p>
 		<p>{$comment}</p>
 	 </div>
   	";
