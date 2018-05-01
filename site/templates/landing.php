@@ -13,7 +13,8 @@ if ($user->isLoggedin()) {
 	$comment = 'no comment';
 	$urlsegment = $input->urlSegment(1);
 	$selector = "name={$urlsegment}";
-	$token = $pages->get('/processwire/landing-tokens/')->find($urlsegment);
+	$log->save('messages', $selector);
+	$token = $pages->get('/processwire/landing-tokens/')->find($selector);
 	if ((count($token)==1) and ($token->token_expiration>=now())) {
 		$comment = 'valid token!';
 	}
