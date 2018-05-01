@@ -12,7 +12,7 @@ if ($user->isLoggedin()) {
 
 	$comment = 'no comment';
 	$urlsegment = $input->urlSegment(1);
-	$selector = "name={$urlsegment}";
+	$selector = "name={$urlsegment}, include=all";
 	$log->save('messages', $selector);
 	$token = $pages->get('/processwire/landing-tokens/')->find($selector);
 	if (count($token)==1) {
