@@ -41,14 +41,17 @@ if (($next_page->id) || ($prev_page->id)) {
   $prev_text = __("Previous");
   $next_text = __("Next");
   
+  // NEXT button setup
   if ($next_page->id) {
-    $next_href = $next_page->url; else $next_disable = 'w3-disabled';
+    $next_href = $next_page->url; 
     $next_text .= '&nbsp;'.$next_page->title;
-  }
+  } else $next_disable = 'w3-disabled';
+
+  // PREV button setup
   if ($prev_page->id) {
-    $prev_href = $prev_page->url; else $prev_disable = 'w3-disabled';
+    $prev_href = $prev_page->url; 
     $prev_text .= '&nbsp;'.$prev_page->title;
-  }
+  } else $prev_disable = 'w3-disabled';
 
   $footer_nextprevious .= "
     <a href = '$prev_href' class='w3-button w3-theme-d5 {$prev_disable} w3-padding-large w3-margin-bottom'>« {$prev_text}</a>
