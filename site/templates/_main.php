@@ -62,7 +62,7 @@ if (($next_page->id) || ($prev_page->id)) {
 }
 
 $cookie_consent = '';
-if (sessionInfo($tokenid)) {
+if (!sessionInfo($tokenid)) {
 	$cookie_consent .= "
 <div class='w3-panel w3-theme w3-display-container'>
   <span onclick='this.parentElement.style.display=\"none\"'
