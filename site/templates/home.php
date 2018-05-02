@@ -14,7 +14,9 @@ if ($image) {
   ";
 }
 
-if ($user->isLoggedin()) {
+$userfilter = null;
+
+if (sessionInfo($userfilter)) {
 
   $tagfilterlist = renderFilterlist();
 

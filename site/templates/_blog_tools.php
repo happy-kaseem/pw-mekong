@@ -156,3 +156,25 @@
 		return $html;
 
 	}
+
+	function sessionInfo(&$var) {
+
+		if ($user->isLoggedin()) {
+
+			$result = true;
+
+		} else {
+
+			$session = wire('session');
+			$config = wire('config');
+
+			$tokenid = $session->get('tokenid');
+			$result = ($session->get('tokenvalue')==\crypt($tokenid,$config->userAuthSalt));
+
+			wire('log')->save('messages', $tokenid.": {$result}");
+
+		}
+
+		return $result;
+
+	}
