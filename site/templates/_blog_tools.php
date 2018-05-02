@@ -159,6 +159,7 @@
 
 	function sessionInfo(&$var) {
 
+		$user = wire('user');
 		if ($user->isLoggedin()) {
 
 			$result = true;
