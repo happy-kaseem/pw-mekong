@@ -88,24 +88,25 @@
 
 	function tagList($user) {
 
+		$taglist = array();
 		if ($user->isLoggedin()) {
-			$tagbase = $user;
+		// build a list of all the tags found in all the roles of the user
+			foreach($user->roles as $userrole) {
+			 	foreach($userrole->tags as $tag) {
+					$taglist += array($tag->id => $tag->title);
+				}
+			}
 		} else {
 			sessionInfo($tokenid);
 			$selector = "name={$tokenid}, include=all"; // selector to find the token
 			$token = wire('pages')->get('/processwire/landing-tokens/')->find($selector);
 			if (count($token)==1) { // did we find excatly one token
-				$tagbase = $token[0]; // retrieve the one token from the array
+			 	foreach($token[0]->tags as $tag) {
+					$taglist += array($tag->id => $tag->title);
+				}
 			}
 		}
 
-		// build a list of all the tags found in all the roles of the user
-		$taglist = array();
-		foreach($tagbase->roles as $userrole) {
-		  foreach($userrole->tags as $tag) {
-		    $taglist += array($tag->id => $tag->title);
-		  }
-		}
 		return $taglist;
 	}
 
