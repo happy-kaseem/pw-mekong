@@ -139,7 +139,7 @@ function showimagegallerymodal(element) {
 	frame = document.getElementById('imagegallerymodal');
 	frame.style.display='block';
 	img = document.getElementById('galleryimage');
-	img.src = element.imagegalleryurl;
+	img.attr('src') = element.attr('imagegalleryurl');
 }
 </script>
 
