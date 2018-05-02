@@ -138,7 +138,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 function showimagegallerymodal(img) {
 	frame = document.getElementById('imagegallerymodal');
 	frame.style.display='block';
-	url = img.parentNode.attr('imagegalleryurl');
+	p = img.parentNode;
+	url = p.attr('imagegalleryurl');
 	img.src = url;
 }
 </script>
