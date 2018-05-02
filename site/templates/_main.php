@@ -33,6 +33,8 @@
 
 if($config->ajax) return;
 
+include_once('./_blog_tools.php');
+
 $footer_nextprevious = '';
 $next_page = $page->next();
 $prev_page = $page->prev();
@@ -60,7 +62,7 @@ if (($next_page->id) || ($prev_page->id)) {
 }
 
 $cookie_consent = '';
-if ($user->isGuest() || !$session->hasCookie()) {
+if ($user->isGuest() || !sessionInfo($tokenid)) {
 	$cookie_consent .= "
 <div class='w3-panel w3-theme w3-display-container'>
   <span onclick='this.parentElement.style.display=\"none\"'
