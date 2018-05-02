@@ -18,6 +18,8 @@ if ($user->isLoggedin()) {
 		$token = $token[0]; // retrieve the one token from the array
 		if ($token->getUnformatted('token_expiration')>=\time()) { // is the token already expired?
 			$comment = 'valid token!';
+			$session->set('tokenid',$token->name);
+			$session->set('tokenvalue',\crypt($token->name,$config->userAuthSalt));
 		} else {
 			$comment = 'expired token!';
 		}
