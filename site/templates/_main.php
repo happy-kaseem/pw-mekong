@@ -122,7 +122,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div id='imagegallerymodal' class='w3-modal' onclick='this.style.display=\"none\"'>
 	<span class='w3-button w3-hover-red w3-xlarge w3-display-topright'>&times;</span>
     <div class='w3-modal-content w3-animate-zoom'>
-      <img src='img_fjords.jpg' style='width:100%'>
+      <img id='galleryimage' src='' style='width:100%'>
 	</div>
 </div>
 
@@ -135,8 +135,11 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
 <script>
-function showimagegallerymodal() {
-	document.getElementById('imagegallerymodal').style.display='block';
+function showimagegallerymodal(element) {
+	frame = document.getElementById('imagegallerymodal');
+	frame.style.display='block';
+	img = frame.getElementById('galleryimage');
+	img.src = element.imagegalleryurl;
 }
 </script>
 
