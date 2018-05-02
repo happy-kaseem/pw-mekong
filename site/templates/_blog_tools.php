@@ -17,7 +17,7 @@
 		  		$thumb = $blog_image->size(600, 150, 'center');
 		  	else
 		  		$thumb = $blog_image->width(600);
-	  		$image_html .= "<img src='{$thumb->url}' alt='{$thumb->description}' style='width:100%'>";
+	  		$image_html .= "<img src='{$thumb->url}' alt='{$thumb->description}' style='width:100%; cursor:zoom-in' onclick=showimagegallerymodal()>";
 	    }
 	    if ($blog->external_url != '') {
 	      $external_html = "<div class='w3-responsive'><iframe class='w3-mobile' src='{$blog->external_url}' width='640' height='360' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";

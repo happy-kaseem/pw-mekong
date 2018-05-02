@@ -119,9 +119,26 @@ and is wrapped around the whole page content, except for the footer in this exam
   <p>Powered by <a href='https://www.w3schools.com/w3css/default.asp' target='_blank'>w3.css</a></p>
 </footer>
 
+<div id='imagegallerymodal' class='w3-modal' onclick='this.style.display=\'none\''>
+	<span class='w3-button w3-hover-red w3-xlarge w3-display-topright'>&times;</span>
+    <div class='w3-modal-content w3-animate-zoom'>
+      <img src='img_fjords.jpg' style='width:100%'>
+	</div>
+</div>
+
+
+
 <!-- END w3-content -->
 </div>
 
 </body>
+
+
+<script>
+function showimagegallerymodal() {
+	document.getElementById('imagegallerymodal').style.display='block'";
+}
+</script>
+
 </html>
 ";
