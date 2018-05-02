@@ -17,7 +17,7 @@
 		  		$thumb = $blog_image->size(600, 150, 'center');
 		  	else
 		  		$thumb = $blog_image->width(600);
-	  		$image_html .= "<img src='{$thumb->url}' alt='{$thumb->description}' style='width:100%; cursor:zoom-in' onclick=showimagegallerymodal()>";
+	  		$image_html .= "<img src='{$thumb->url}' imagegalleryurl='{$blog_image->url}' alt='{$thumb->description}' style='width:100%; cursor:zoom-in' onclick='showimagegallerymodal()'>";
 	    }
 	    if ($blog->external_url != '') {
 	      $external_html = "<div class='w3-responsive'><iframe class='w3-mobile' src='{$blog->external_url}' width='640' height='360' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
@@ -40,7 +40,7 @@
         	$blog_images .= '<div>';
         	foreach ($blog->images as $image) {
 		  		$thumb = $image->height(60);
-        		$blog_images .= "<img src='{$thumb->url}' class='w3-image w3-padding'>";
+        		$blog_images .= "<img src='{$thumb->url}' imagegalleryurl='{$image->url}' class='w3-image w3-padding' onclick='showimagegallerymodal()' style='cursor:zoom-in'>";
         	}
         	$blog_images .= '</div>';
         }
