@@ -90,7 +90,7 @@
 
 		$taglist = array();
 		if ($user->isLoggedin()) {
-		// build a list of all the tags found in all the roles of the user
+			// build a list of all the tags found in all the roles of the user
 			foreach($user->roles as $userrole) {
 			 	foreach($userrole->tags as $tag) {
 					$taglist += array($tag->id => $tag->title);
@@ -98,6 +98,7 @@
 			}
 		} else {
 			sessionInfo($tokenid);
+			wire('log')->save('message', 'login by token:'.$tokenid);
 			$selector = "name={$tokenid}, include=all"; // selector to find the token
 			$token = wire('pages')->get('/processwire/landing-tokens/')->find($selector);
 			if (count($token)==1) { // did we find excatly one token
@@ -131,7 +132,7 @@
 			$tag_sel = $tagfilter;
 		else
 			$tag_sel = implode('|', $taglistkeys);
-		$selector = "template=blog, tags={$tag_sel}";
+		$selector = "template=blog, tags={$tag_sel}, include=all";
 		// todo - this needs to be rewritten so that only entries with all the given tags appear in the last
 //		foreach ($taglist as $tag) $selector .= ", tags={$tag}";
 
