@@ -45,7 +45,7 @@ if (($next_page->id) || ($prev_page->id)) {
     $next_href = $next_page->url; else $next_disable = 'w3-disabled';
     $next_text .= '&nbsp;'.$next_page->title;
   }
-  if ($prev_page->id) }
+  if ($prev_page->id) {
     $prev_href = $prev_page->url; else $prev_disable = 'w3-disabled';
     $prev_text .= '&nbsp;'.$prev_page->title;
   }
