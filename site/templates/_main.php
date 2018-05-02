@@ -136,10 +136,11 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <script>
 function showimagegallerymodal(element) {
+  img = document.getElementById('galleryimage');
+  img.src = '';
 	frame = document.getElementById('imagegallerymodal');
 	frame.style.display='block';
 	url = element.getAttribute('imagegalleryurl');
-	img = document.getElementById('galleryimage');
 	img.src = url;
 }
 </script>
