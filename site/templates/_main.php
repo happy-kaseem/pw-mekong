@@ -38,12 +38,18 @@ $next_page = $page->next();
 $prev_page = $page->prev();
 
 if (($next_page->id) || ($prev_page->id)) {
-  if ($next_page->id) $next_href = $next_page->url; else $next_disable = 'w3-disabled';
-  if ($prev_page->id) $prev_href = $prev_page->url; else $prev_disable = 'w3-disabled';
-
   $prev_text = __("Previous");
   $next_text = __("Next");
   
+  if ($next_page->id) {
+    $next_href = $next_page->url; else $next_disable = 'w3-disabled';
+    $next_text .= '&nbsp;'.$next_page->title;
+  }
+  if ($prev_page->id) }
+    $prev_href = $prev_page->url; else $prev_disable = 'w3-disabled';
+    $prev_text .= '&nbsp;'.$prev_page->title;
+  }
+
   $footer_nextprevious .= "
     <a href = '$prev_href' class='w3-button w3-theme-d5 {$prev_disable} w3-padding-large w3-margin-bottom'>« {$prev_text}</a>
     <a href = '$next_href' class='w3-button w3-theme-d5 {$next_disable} w3-padding-large w3-margin-bottom'>{$next_text} »</a>
