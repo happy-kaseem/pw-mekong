@@ -44,13 +44,13 @@ if (($next_page->id) || ($prev_page->id)) {
   // NEXT button setup
   if ($next_page->id) {
     $next_href = $next_page->url; 
-    $next_text .= '&nbsp;-&nbsp;<small>'.$next_page->title.'</small>';
+    $next_text .= '&nbsp;<small>('.$next_page->title.')</small>';
   } else $next_disable = 'w3-disabled';
 
   // PREV button setup
   if ($prev_page->id) {
     $prev_href = $prev_page->url; 
-    $prev_text .= '&nbsp;-&nbsp;<small>'.$prev_page->title.'</small>';
+    $prev_text .= '&nbsp;<small>('.$prev_page->title.')</small>';
   } else $prev_disable = 'w3-disabled';
 
   $footer_nextprevious .= "
