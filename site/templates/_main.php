@@ -127,7 +127,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Footer -->
 <footer class='w3-container w3-theme-l3 w3-padding-32 w3-margin-top'>
   {$footer_nextprevious}
-  <p>Powered by <a href='https://www.w3schools.com/w3css/default.asp' target='_blank'>w3.css</a></p>
+  <p>Powered by <a href='https://processwire.com/' target='_blank'>PROCESS<i>wire</i></a> and <a href='https://www.w3schools.com/w3css/default.asp' target='_blank'>w3.css</a></p>
 </footer>
 
 <div id='imagegallerymodal' class='w3-modal' onclick='this.style.display=\"none\"'>
