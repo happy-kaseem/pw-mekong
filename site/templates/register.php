@@ -24,6 +24,13 @@ if ($user->isLoggedin()) {
 	$field->required = 1;
 	$form->append($field); // append the field to the form
 
+	// create a text input
+	$field = $modules->get("InputfieldText");
+	$field->label = "How do you know about us?";
+	$field->attr('id+name','about');
+	$field->required = 1;
+	$form->append($field); // append the field to the form
+
 	// create email field
 	$field = $modules->get("InputfieldEmail");
 	$field->label = "E-Mail";
