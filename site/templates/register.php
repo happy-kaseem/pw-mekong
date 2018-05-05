@@ -105,4 +105,8 @@ if ($user->isLoggedin()) {
     	$content .= $form->render();
 	}
 
+	$form_config = $form->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
+
+
 }; // END if ($user->isLoggedin())
