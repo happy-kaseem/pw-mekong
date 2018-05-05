@@ -22,6 +22,7 @@ if ($user->isLoggedin()) {
 	$field->label = "Name";
 	$field->attr('id+name','name');
 	$field->required = 1;
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
 	$form->append($field); // append the field to the form
 
 	// create a text input
@@ -29,6 +30,7 @@ if ($user->isLoggedin()) {
 	$field->label = "How do you know about us?";
 	$field->attr('id+name','about');
 	$field->required = 1;
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
 	$form->append($field); // append the field to the form
 
 	// create email field
@@ -36,6 +38,7 @@ if ($user->isLoggedin()) {
 	$field->label = "E-Mail";
 	$field->attr('id+name','email');
 	$field->required = 1;
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
 	$form->append($field); // append the field
 
 	// you get the idea
@@ -43,12 +46,14 @@ if ($user->isLoggedin()) {
 	$field->label = "Passwort";
 	$field->attr("id+name","pass");
 	$field->required = 1;
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
 	$form->append($field);
 
 	// oh a submit button!
 	$submit = $modules->get("InputfieldSubmit");
 	$submit->attr("value","Subscribe");
 	$submit->attr("id+name","submit");
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
 	$form->append($submit);
 
 	// form was submitted so we process the form
