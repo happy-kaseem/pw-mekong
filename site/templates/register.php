@@ -15,6 +15,8 @@ if ($user->isLoggedin()) {
 	$form = $modules->get("InputfieldForm");
 	$form->action = "./";
 	$form->method = "post";
+	$form_config = $form->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
 	$form->attr("id+name",'subscribe-form');
 
 	// create a text input
@@ -22,7 +24,8 @@ if ($user->isLoggedin()) {
 	$field->label = "Name";
 	$field->attr('id+name','name');
 	$field->required = 1;
-	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
+	$form_config = $field->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
 	$form->append($field); // append the field to the form
 
 	// create a text input
@@ -30,7 +33,8 @@ if ($user->isLoggedin()) {
 	$field->label = "How do you know about us?";
 	$field->attr('id+name','about');
 	$field->required = 1;
-	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
+	$form_config = $field->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
 	$form->append($field); // append the field to the form
 
 	// create email field
@@ -38,7 +42,8 @@ if ($user->isLoggedin()) {
 	$field->label = "E-Mail";
 	$field->attr('id+name','email');
 	$field->required = 1;
-	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
+	$form_config = $field->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
 	$form->append($field); // append the field
 
 	// you get the idea
@@ -46,15 +51,20 @@ if ($user->isLoggedin()) {
 	$field->label = "Passwort";
 	$field->attr("id+name","pass");
 	$field->required = 1;
-	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
+	$form_config = $field->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
 	$form->append($field);
 
 	// oh a submit button!
 	$submit = $modules->get("InputfieldSubmit");
 	$submit->attr("value","Subscribe");
 	$submit->attr("id+name","submit");
-	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($field->getConfigArray(),true));
+	$form_config = $field->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
 	$form->append($submit);
+
+	$form_config = $form->getConfigArray();
+	wire('log')->save('messages', 'ConfigArray: Classname='.$field->name.' : '.print_r($form_config,true).' : '.count($form_config));
 
 	// form was submitted so we process the form
 	if($input->post->submit) {

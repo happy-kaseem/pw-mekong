@@ -98,7 +98,7 @@
 			}
 		} else {
 			sessionInfo($tokenid);
-			wire('log')->save('message', 'login by token:'.$tokenid);
+			wire('log')->save('messages', 'login by token:'.$tokenid);
 			$selector = "name={$tokenid}, include=all"; // selector to find the token
 			$token = wire('pages')->get('/processwire/landing-tokens/')->find($selector);
 			if (count($token)==1) { // did we find excatly one token
