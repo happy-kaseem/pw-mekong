@@ -2,10 +2,19 @@
 
 if ($user->isLoggedin()) {
 
+
+	$subpages = $page->find('template=presentation');
+
+	$menu = null;
+	foreach ($subpages as $sp) {
+		$menu .= "<div class='w3-card'>{$sp->title}</div>";
+	}
+
+
 	$content .= "
 	<!-- Main content -->
 	<div class='w3-container'>
-		{$page->body}
+		{$menu}
 
 	</div>
 	";
