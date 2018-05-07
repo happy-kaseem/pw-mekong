@@ -19,7 +19,7 @@ if ($user->isLoggedin()) {
 		";	
 	}
 
-	$menu = "<div class='w3-row-padding'>";
+	$menu = "<div class='w3-row'>";
 	foreach ($subpages as $sp) {
 		// height 172px = 50+90+2*16 (margins and padding)
 		$menu .= "
