@@ -2,7 +2,7 @@
 
 if ($user->isLoggedin()) {
 
-	$cardstyle = 'w3-card';
+	$cardstyle = 'w3-panel w3-card';
 
 	$subpages = $page->find('template=presentation');
 
