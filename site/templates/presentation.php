@@ -19,10 +19,10 @@ if ($user->isLoggedin()) {
 				{$first->title}
 			</div>
 			<div class='w3-row'>
-				<div class='w3-col'>
+				<div class='w3-cell'>
 					{$imagehtml}
 				</div>
-				<div class='w3-col'>
+				<div class='w3-cell'>
 					{$first->body}
 				</div>
 			</div>
