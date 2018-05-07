@@ -8,10 +8,10 @@ if ($user->isLoggedin()) {
 	$menu = "<div class='w3-row-padding'>";
 	foreach ($subpages as $sp) {
 		$menu .= "
-		<div class='w3-col w3-card l2 m3 s4' style='height:120px'>
-			<div class='w3-theme'>{$sp->title}
+		<div class='w3-col w3-card l2 m3 s6' style='height:120px'>
+			<div class='w3-container w3-theme'>{$sp->title}
 			</div>
-			<div>
+			<div class='w3-container'>
 			{$sp->about}
 			</div>
 		</div>";
