@@ -10,10 +10,10 @@ if ($user->isLoggedin()) {
 		$menu .= "
 		<div class='w3-col l2 m3 s6' style='height:120px'>
 			<div class='w3-card'>
-				<div class='w3-container w3-theme'>
+				<div class='w3-container w3-theme' style='height:30px'>
 					{$sp->title}
 				</div>
-				<div class='w3-container'>
+				<div class='w3-container' style='height:90px'>
 					{$sp->about}
 				</div>
 			</div>
@@ -24,9 +24,8 @@ if ($user->isLoggedin()) {
 	$content .= "
 	<!-- Main content -->
 	<div class='w3-container'>
-		{$menu}
-
 	</div>
+	{$menu}
 	";
 } else { // ELSE if ($user->isLoggedin())
 
