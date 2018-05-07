@@ -40,9 +40,7 @@ if ($user->isLoggedin()) {
 
 	$content .= "
 	<!-- Main content -->
-	<div class='w3-container'>
 	{$main}
-	</div>
 	{$menu}
 	";
 } else { // ELSE if ($user->isLoggedin())
