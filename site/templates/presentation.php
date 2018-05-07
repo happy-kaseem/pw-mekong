@@ -11,7 +11,7 @@ if ($user->isLoggedin()) {
 		$image = $first->images->first();
 		if ($image) {
 			$tumb = $image->size(60,180);
-			$imagehtml = "<img src='{$tumb->url}' class='w3-image'>";
+			$imagehtml = "<img src='{$tumb->url}' class='w3-image w3-left'>";
 		}
 		$main .= "
 		<div class='w3-container w3-animate-left'>
