@@ -11,20 +11,18 @@ if ($user->isLoggedin()) {
 		$image = $first->images->first();
 		if ($image) {
 			$tumb = $image->size(60,180);
-			$imagehtml = "<img src='{$tumb->url}' class='w3-image'>";
+			$imagehtml = "<img src='{$tumb->url}' class='w3-left w3-margin-right w3-margin-bottom>";
 		}
 		$main .= "
 		<div class='w3-container w3-animate-left'>
 			<div class='w3-container w3-large w3-theme' style='height:50px'>
 				{$first->title}
 			</div>
-			<div class='w3-cell-row'>
-				<div class='w3-cell-top l2 m3 s4'>
-					{$imagehtml}
-				</div>
-				<div class='w3-cell-top w3-container w3-rest'>
+			<div>
+				{$imagehtml}
+				<span>
 					{$first->body}
-				</div>
+				</span>
 			</div>
 		</div>
 		";	
