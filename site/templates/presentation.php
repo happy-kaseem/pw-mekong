@@ -11,17 +11,17 @@ if ($user->isLoggedin()) {
 	if ($first) {
 		$main .= "
 		<div class='{$cardstyle}'>
-			<div class='w3-large w3-theme' style='height:50px'>
+			<div class='w3-container w3-large w3-theme' style='height:50px'>
 				{$first->title}
 			</div>
-			<div class=''>
+			<div class='w3-container'>
 				{$first->body}
 			</div>
 		</div>
 		";	
 	}
 
-	$menu = "<div class='w3-row-padding'>";
+	$menu = "<div class='w3-row'>";
 	foreach ($subpages as $sp) {
 		$menu .= "
 		<div class='w3-col l2 m3 s6' style='height:140px'>
