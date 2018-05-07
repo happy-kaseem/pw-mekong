@@ -18,8 +18,9 @@ if ($user->isLoggedin()) {
 			<div class='w3-container w3-large w3-theme' style='height:50px'>
 				{$first->title}
 			</div>
-			<div class='w3-container'>
-				{$imagehtml}{$first->body}
+			{$imagehtml}
+			<div class='w3-margin'>
+				{$first->body}
 			</div>
 		</div>
 		";	
