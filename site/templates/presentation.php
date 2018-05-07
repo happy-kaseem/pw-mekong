@@ -11,6 +11,9 @@ if ($user->isLoggedin()) {
 		<div class='w3-col l2 m3 s4'>
 			<div class='w3-theme'>{$sp->title}
 			</div>
+			<div>
+			{$sp->about}
+			</div>
 		</div>";
 	}
 	$menu .= "</div>";
