@@ -5,9 +5,9 @@ if ($user->isLoggedin()) {
 
 	$subpages = $page->find('template=presentation');
 
-	$menu = "<div class='w3-row'>";
+	$menu = "<div class='w3-row-padding'>";
 	foreach ($subpages as $sp) {
-		$menu .= "<div class='w3-cell l2 m3 s4'>{$sp->title}</div>";
+		$menu .= "<div class='w3-col l2 m3 s4 w3-theme'>{$sp->title}</div>";
 	}
 	$menu .= "</div>";
 
