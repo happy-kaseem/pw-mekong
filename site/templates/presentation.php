@@ -11,10 +11,10 @@ if ($user->isLoggedin()) {
 	if ($first) {
 		$main .= "
 		<div class='{$cardstyle}'>
-			<div class='w3-container w3-large w3-theme' style='height:50px'>
+			<div class='w3-large w3-theme' style='height:50px'>
 				{$first->title}
 			</div>
-			<div class='w3-container'>
+			<div class=''>
 				{$first->body}
 			</div>
 		</div>
