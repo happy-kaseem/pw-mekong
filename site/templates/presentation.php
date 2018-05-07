@@ -21,7 +21,7 @@ if ($user->isLoggedin()) {
 		";	
 	}
 
-	$menu = "<div class='w3-row'>";
+	$menu = "<div class='w3-row w3-padding'>";
 	foreach ($subpages as $sp) {
 		$menu .= "
 		<div class='w3-col l2 m3 s6' style='height:140px'>
