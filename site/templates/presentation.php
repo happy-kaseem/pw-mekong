@@ -7,7 +7,7 @@ if ($user->isLoggedin()) {
 
 	$menu = "<div class='w3-row'>";
 	foreach ($subpages as $sp) {
-		$menu .= "<div class='w3-card l2 m3 s4'>{$sp->title}</div>";
+		$menu .= "<div class='w3-cell l2 m3 s4'>{$sp->title}</div>";
 	}
 	$menu .= "</div>";
 
