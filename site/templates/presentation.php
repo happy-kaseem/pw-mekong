@@ -5,6 +5,14 @@ if ($user->isLoggedin()) {
 
 	$subpages = $page->find('template=presentation');
 
+	$main = null;
+	$first = $subpages->first();
+	if ($first) {
+		$main .= "
+			{$first->body}
+		";	
+	}
+
 	$menu = "<div class='w3-row-padding'>";
 	foreach ($subpages as $sp) {
 		$menu .= "
@@ -24,6 +32,7 @@ if ($user->isLoggedin()) {
 	$content .= "
 	<!-- Main content -->
 	<div class='w3-container'>
+	{$main}
 	</div>
 	{$menu}
 	";
