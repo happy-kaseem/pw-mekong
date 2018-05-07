@@ -10,7 +10,7 @@ if ($user->isLoggedin()) {
 	$first = $subpages->first();
 	if ($first) {
 		$main .= "
-		<div class='{$cardstyle}'>
+		<div class='{$cardstyle} w3-animate-left'>
 			<div class='w3-container w3-large w3-theme' style='height:50px'>
 				{$first->title}
 			</div>
