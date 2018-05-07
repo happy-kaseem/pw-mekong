@@ -25,7 +25,7 @@ if ($user->isLoggedin()) {
 	foreach ($subpages as $sp) {
 		$menu .= "
 		<div class='w3-col l2 m3 s6' style='height:140px'>
-			<div class='{$cardstyle}'>
+			<div class='{$cardstyle}' style='padding-bottom: 25px;'>
 				<div class='w3-container w3-theme' style='height:50px'>
 					{$sp->title}
 				</div>
