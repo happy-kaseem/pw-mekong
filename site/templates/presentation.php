@@ -4,7 +4,7 @@ if ($user->isLoggedin()) {
 
 	$cardstyle = 'w3-card w3-margin';
 
-	$subpages = $page->find('template=presentation');
+	$subpages = $page->children('template=presentation');
 
 	$main = null;
 	$first = $subpages->first();
