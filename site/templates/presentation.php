@@ -16,11 +16,13 @@ if ($user->isLoggedin()) {
 		$main .= "
 		<div class='w3-container w3-animate-left'>
 			{$imagehtml}
-			<div class='w3-container w3-large w3-theme' style='height:50px'>
-				{$first->title}
-			</div>
-			<div class='w3-container'>
-				{$first->body}
+			<div>
+				<div class='w3-container w3-large w3-theme' style='height:50px'>
+					{$first->title}
+				</div>
+				<div class='w3-container'>
+					{$first->body}
+				</div>
 			</div>
 		</div>
 		";	
