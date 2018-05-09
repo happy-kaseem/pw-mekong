@@ -46,7 +46,7 @@ if ($user->isLoggedin()) {
 			// height 172px = 50+90+2*16 (margins and padding)
 			$menu .= "
 			<div class='w3-col l2 m3 s6' style='height: 172px;'>
-				<div class='w3-theme-l4' onclick='w3_open_modal(\"{$p->url}\")'>
+				<div class='w3-theme-l4' onclick='w3_open_modal(\"{$sp->url}\")'>
 					<div class='w3-container w3-theme' style='height:50px'>
 						{$sp->title}
 					</div>
