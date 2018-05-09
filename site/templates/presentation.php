@@ -11,12 +11,12 @@
 		$main .= "
 		<div class='w3-container w3-animate-left'>
 			<div class='w3-container w3-large w3-theme' style='height:50px'>
-				{$first->title}
+				{$page->title}
 			</div>
 			<div>
 				{$imagehtml}
 				<span>
-					{$first->body}
+					{$page->body}
 				</span>
 			</div>
 		</div>
