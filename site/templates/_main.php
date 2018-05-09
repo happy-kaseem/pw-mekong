@@ -83,6 +83,16 @@ $language_menu .= "
 	  </div>
 ";
 
+$additional_scripts = null;
+foreach($config->styles as $style) $additional_scripts .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$style\">\r";
+$additional_scripts .= "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>";
+$additional_scripts .= "<script src=\"<?php echo $config->urls->templates?>scripts/jquery.metadata.js\"></script>";
+foreach($config->scripts as $script) $additional_scripts .= "<script src=\"$script\"></script>\r";
+if(is_array($this->config->javascripts)) {
+  wire('log')->save('messages', 'javascripts available'); 
+  foreach ($this->config->javascripts as $text) $additional_scripts .= $text; 
+}
+
 echo "
 <!DOCTYPE html>
 <html>
@@ -93,6 +103,7 @@ echo "
 <link rel='stylesheet' href='{$config->urls->templates}styles/w3-theme-blue-grey.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+{$additional_scripts}
 <style>
 body,h1,h2,h3,h4,h5 {font-family: 'Raleway', sans-serif}
 </style>
