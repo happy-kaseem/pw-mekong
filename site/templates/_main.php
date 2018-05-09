@@ -154,6 +154,80 @@ function showimagegallerymodal(element) {
 	url = element.getAttribute('imagegalleryurl');
 	img.src = url;
 }
+
+var ajaxtarget;
+
+function w3_load_content(url) { // Load content
+
+    var form = $(ajaxtarget).parent('form');
+
+    // collect all the input elements on the form
+    var inputs = form.find('input, select, button, textarea');
+
+    // serialize the available data for form submission
+    var serializedData = $(form).serialize().concat('&ajax=true');
+
+    // Let's disable the inputs for the duration of the Ajax request.
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    inputs.prop('disabled', true);
+
+    // spinner can only be displayed now otherwise we can not read the form data above
+    ajaxtarget.innerHTML = '<i class=\'fa fa-spinner w3-spin\'></i>';         
+    // variable for page data
+    pageData = '';
+
+    postdata = { ajax: true };
+
+    // send Ajax request
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: serializedData,
+        success: function(data,status){
+            pageData = data;
+        }
+    }).done(function(){ // when finished and successful
+
+        // construct new content
+        //pageData = '<div class='content no-opacity ajax'>' + pageData + '</div>';
+
+        // add content to page
+        ajaxtarget.innerHTML = pageData;         
+        $('.ac-sortable-table').tablesorter(); 
+        $.tablesorter.addParser({
+            id: 'metadatas',
+            is: function (s) {
+                return false;
+            }, format: function (s, table, cell) {
+                var c = table.config,
+                    p = (!c.parserMetadataName) ? 'sortValue' : c.parserMetadataName;
+                return $(cell).metadata()[p];
+            }, type: 'text'
+        });
+
+    }).fail(function (jqXHR, textStatus, errorThrown){ // when finished and successful
+
+        console.error(
+            'The following error occurred: '+
+            textStatus, errorThrown
+        );
+        // most likely we are not logged in any more - reload to login again
+        location.reload(); 
+    // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    }).always(function () {
+        // Reenable the inputs
+        inputs.prop('disabled', false);
+        form.find('#ac_action').val('');
+    }); // end of ajax().always()
+} // end of loadContent()
+
+function w3_open_modal(url) {
+  ajaxtarget = x.getElementsByClassName('w3-ajax-target')[0];
+  w3_load_content(url);
+}
+
 </script>
 
 </html>
