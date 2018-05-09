@@ -45,7 +45,7 @@ if ($user->isLoggedin()) {
 		foreach ($subpages as $sp) {
 			// height 172px = 50+90+2*16 (margins and padding)
 			$menu .= "
-			<div class='w3-col l2 m3 s6'>
+			<div class='w3-col l2 m3 s6 w3-margin-bottom'>
 				<div class='w3-theme-l4' style='cursor:pointer' onclick='w3_open_modal(\"{$sp->url}\")'>
 					<div class='w3-container w3-theme' style='height:50px'>
 						{$sp->title}
