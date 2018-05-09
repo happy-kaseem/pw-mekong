@@ -1,14 +1,9 @@
 <?php namespace ProcessWire;
 
-if ($user->isLoggedin()) {
+	function renderMainpage($page) {
 
-	$subpages = $page->children('template=presentation');
-
-	$main = null;
-	$first = $subpages->first();
-	if ($first) {
 		$imagehtml = null;
-		$image = $first->images->first();
+		$image = $page->images->first();
 		if ($image) {
 			$tumb = $image->size(60,180);
 			$imagehtml = "<img src='{$tumb->url}' class='w3-left w3-margin-right w3-margin-bottom'>";
@@ -25,31 +20,46 @@ if ($user->isLoggedin()) {
 				</span>
 			</div>
 		</div>
-		";	
+		";
+		return $main;
 	}
 
-	$menu = "<div class='w3-row'>";
-	foreach ($subpages as $sp) {
-		// height 172px = 50+90+2*16 (margins and padding)
-		$menu .= "
-		<div class='w3-container w3-col l2 m3 s6' style='height: 172px;'>
-			<div class='w3-theme-l4'>
-				<div class='w3-container w3-theme' style='height:50px'>
-					{$sp->title}
-				</div>
-				<div class='w3-container w3-small' style='height:90px;overflow:auto'>
-					{$sp->about}
-				</div>
-			</div>
-		</div>";
-	}
-	$menu .= "</div>";
+if ($user->isLoggedin()) {
 
-	$content .= "
-	<!-- Main content -->
-	{$main}
-	{$menu}
-	";
+	if ($config->ajax) {
+		echo renderMainpage($page);
+	} else {
+
+		$subpages = $page->children('template=presentation');
+
+		$main = null;
+		$first = $subpages->first();
+		if ($first) $main = renderMainpage($first);
+
+		$menu = "<div class='w3-row'>";
+		foreach ($subpages as $sp) {
+			// height 172px = 50+90+2*16 (margins and padding)
+			$menu .= "
+			<div class='w3-container w3-col l2 m3 s6' style='height: 172px;'>
+				<div class='w3-theme-l4'>
+					<div class='w3-container w3-theme' style='height:50px'>
+						{$sp->title}
+					</div>
+					<div class='w3-container w3-small' style='height:90px;overflow:auto'>
+						{$sp->about}
+					</div>
+				</div>
+			</div>";
+		}
+		$menu .= "</div>";
+
+		$content .= "
+		<!-- Main content -->
+		{$main}
+		{$menu}
+		";
+	}
+
 } else { // ELSE if ($user->isLoggedin())
 
 
