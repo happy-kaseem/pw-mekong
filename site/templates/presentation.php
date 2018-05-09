@@ -10,7 +10,7 @@
 		}
 
 		$main .= "
-		<div class='w3-container w3-animate-left'>
+		<div class='w3-animate-left'>
 			<div class='w3-container w3-large w3-theme>
 				{$page->title}
 			</div>
