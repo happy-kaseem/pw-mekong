@@ -205,17 +205,6 @@ function w3_load_content(url) { // Load content
 
         // add content to page
         ajaxtarget.innerHTML = pageData;         
-        $('.ac-sortable-table').tablesorter(); 
-        $.tablesorter.addParser({
-            id: 'metadatas',
-            is: function (s) {
-                return false;
-            }, format: function (s, table, cell) {
-                var c = table.config,
-                    p = (!c.parserMetadataName) ? 'sortValue' : c.parserMetadataName;
-                return $(cell).metadata()[p];
-            }, type: 'text'
-        });
 
     }).fail(function (jqXHR, textStatus, errorThrown){ // when finished and successful
 
