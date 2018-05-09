@@ -19,7 +19,7 @@
 					<div class='w3-col' style='width: 68px'>
 						{$imagehtml}
 					</div>
-					<div class='w3-rest' style='height: 180px'>
+					<div class='w3-rest' style='height: 180px;overflow:auto'>
 						{$page->body}
 					</div>
 				</div>
@@ -45,12 +45,12 @@ if ($user->isLoggedin()) {
 		foreach ($subpages as $sp) {
 			// height 172px = 50+90+2*16 (margins and padding)
 			$menu .= "
-			<div class='w3-col l2 m3 s6' style='height: 172px;'>
+			<div class='w3-col l2 m3 s6'>
 				<div class='w3-theme-l4' style='cursor:pointer' onclick='w3_open_modal(\"{$sp->url}\")'>
 					<div class='w3-container w3-theme' style='height:50px'>
 						{$sp->title}
 					</div>
-					<div class='w3-container w3-small w3-hide-small' style='height:90px;overflow:auto'>
+					<div class='w3-container w3-small w3-hide-small' style='height:90px;overflow:auto;'>
 						{$sp->about}
 					</div>
 				</div>
