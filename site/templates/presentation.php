@@ -15,8 +15,12 @@
 				{$page->title}
 			</div>
 			<div class ='w3-topbar w3-border-theme'>
-				{$imagehtml}
-				<div class='w3-display-container'>
+				<div class='w3-row'>
+					<div class='w3-col' style='width: 68px'>
+						{$imagehtml}
+					</div>
+				</div>
+				<div class='w3-rest'>
 					{$page->body}
 				</div>
 			</div>
