@@ -16,10 +16,10 @@
 			</div>
 			<div class ='w3-theme-l4 w3-topbar w3-border-theme'>
 				<div class='w3-row'>
-					<div class='w3-col' style='width: 68px'>
+					<div class='w3-col' style='height: 180px; width: 68px;'>
 						{$imagehtml}
 					</div>
-					<div class='w3-rest' style='height: 180px;overflow:auto'>
+					<div class='w3-rest' style='height: 180px; overflow: auto;'>
 						{$page->body}
 					</div>
 				</div>
