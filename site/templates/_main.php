@@ -184,7 +184,7 @@ function w3_load_content(url) { // Load content
     inputs.prop('disabled', true);
 
     // spinner can only be displayed now otherwise we can not read the form data above
-    ajaxtarget.innerHTML = '<i class=\'fa fa-spinner w3-spin\'></i>'+ajaxtarget.innerHTML;         
+    // ajaxtarget.innerHTML = '<i class=\'fa fa-spinner w3-spin\'></i>';         
     // variable for page data
     pageData = '';
 
