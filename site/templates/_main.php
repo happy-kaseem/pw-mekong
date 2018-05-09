@@ -224,7 +224,7 @@ function w3_load_content(url) { // Load content
 } // end of loadContent()
 
 function w3_open_modal(url) {
-  ajaxtarget = x.getElementsByClassName('w3-ajax-target')[0];
+  ajaxtarget = document.getElementById('w3-ajax-target');
   w3_load_content(url);
 }
 
