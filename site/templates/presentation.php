@@ -60,9 +60,9 @@ if ($user->isLoggedin()) {
 
 		$content .= "
 		<!-- Main content -->
-		<div id='w3-ajax-target'>
+		<form><div id='w3-ajax-target'>
 			{$main}
-		</div>
+		</div></form>
 		{$menu}
 		";
 	}
