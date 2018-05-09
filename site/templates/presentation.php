@@ -19,7 +19,7 @@
 					<div class='w3-col' style='width: 68px'>
 						{$imagehtml}
 					</div>
-					<div class='w3-rest'>
+					<div class='w3-rest' style='height: 180px'>
 						{$page->body}
 					</div>
 				</div>
@@ -50,7 +50,7 @@ if ($user->isLoggedin()) {
 					<div class='w3-container w3-theme' style='height:50px'>
 						{$sp->title}
 					</div>
-					<div class='w3-container w3-small' style='height:90px;overflow:auto'>
+					<div class='w3-container w3-small w3-hide-small' style='height:90px;overflow:auto'>
 						{$sp->about}
 					</div>
 				</div>
