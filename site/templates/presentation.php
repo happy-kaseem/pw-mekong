@@ -10,18 +10,18 @@
 		}
 
 		$main .= "
-		<div class='w3-animate-left w3-theme-l4 w3-padding'>
+		<div class='w3-animate-left'>
 			<div class='w3-container w3-large w3-theme'>
 				{$page->title}
 			</div>
-			<div class ='w3-topbar w3-border-theme'>
+			<div class ='w3-theme-l4 w3-topbar w3-border-theme'>
 				<div class='w3-row'>
 					<div class='w3-col' style='width: 68px'>
 						{$imagehtml}
 					</div>
-				</div>
-				<div class='w3-rest'>
-					{$page->body}
+					<div class='w3-rest'>
+						{$page->body}
+					</div>
 				</div>
 			</div>
 		</div>
