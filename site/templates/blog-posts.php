@@ -10,7 +10,6 @@
     $blog = $modules->get("MarkupBlog");
 
     // main content
-    $content = '';
     $content .= "<h2>{$page->get('blog_headline|title')}</h2>";
     //render a limited number of summarised posts
     $content .= $blog->renderPosts("limit=5", true);
@@ -28,4 +27,9 @@
         return;// this is important: stops output of any other markup except the RSS xml
     }
 
+
+    // main content
+    $content .= "<h2>$page->title</h2>";
+    // Render alphabetical list of tags + show number of posts for each tag + render an alphabetical jumplist of tags
+    $content .= $blog->renderTags($page->children);// children => the individual tag pages
 
