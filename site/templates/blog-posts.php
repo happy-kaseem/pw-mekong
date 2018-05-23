@@ -33,3 +33,8 @@
     // Render alphabetical list of tags + show number of posts for each tag + render an alphabetical jumplist of tags
     $content .= $blog->renderTags($page->children);// children => the individual tag pages
 
+    $limit = 3;// number of posts to list per category
+    $content .= "<h2>$page->title</h2>";
+    // Render list of categories showing a maximum of 3 posts titles per category
+    $content .= $blog->renderCategories($page->children, $limit);// children => the individual category pages
+
